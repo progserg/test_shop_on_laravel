@@ -1,0 +1,124 @@
+.cart-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  //background-color: rgba(0, 0, 0, 0.6)
+  z-index: 1050;
+  background-color: brown;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: auto;
+}
+
+.cart {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 300px;
+  width: 50%;
+  background-color: brown;
+  text-align: center;
+
+  h1 {
+    text-align: center;
+    border-bottom: 1px solid grey;
+  }
+
+  .row {
+    display: flex;
+    margin: 10px;
+    //flex-wrap: wrap
+
+    justify-content: space-between;
+    .col {
+      text-align: left;
+      flex: 1;
+    }
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+}
+
+.cartBottom {
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  bottom: 0;
+  z-index: 1050;
+  background-color: brown;
+}
+
+/* animation */
+.bounce-enter-active {
+  -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.bounce-leave-active {
+  -webkit-animation: slide-out-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  animation: slide-out-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    //opacity: 0
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    //opacity: 1
+  }
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    //opacity: 0
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    //opacity: 1
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-out-bottom
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-out-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    //opacity: 1
+  }
+  100% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    //opacity: 0
+  }
+}
+
+@keyframes slide-out-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    //opacity: 1
+  }
+  100% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    //opacity: 0
+  }
+}
